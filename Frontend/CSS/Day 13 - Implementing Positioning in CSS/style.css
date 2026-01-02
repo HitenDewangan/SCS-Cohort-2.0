@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url(./HelveticaNeueLight.otf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue Light', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
+    color: black;
+}
+
+#nav{
+    padding: 10px 30px;
+}
+
+#nav a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    margin-right: 20px;
+
+}
+
+#main h1{
+    font-size: 400px;
+    font-weight: 300;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+#btmLeft{
+    position: absolute;
+    width: 300px;
+    bottom: 10%;
+    left: 3%;
+}
+
+#btmLeft h3{
+    font-size: 24px;
+}
+
+#btmLeft h4{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+#btmLeft p{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#bottomBar{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#bottomBar h3{
+    font-size: 24px;
+    /* padding-left: 40px;
+    padding-bottom: 10px; */
+}
+
+#bottomBar a{
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+#main>img{
+    position: absolute;
+}
+
+#first{
+    right: 30%;
+    top: 50%;
+    height: 220px;
+}
+
+#second{
+    right: 22%;
+    top: 65%;
+    height: 250px;
+}
+
+#third{
+    right: 13%;
+    top: 40%;
+    height: 300px;
+}

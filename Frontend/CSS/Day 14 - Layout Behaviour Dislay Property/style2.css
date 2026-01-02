@@ -1,0 +1,190 @@
+/* -------------------------------------------
+   1. GLOBAL VARIABLES
+------------------------------------------- */
+:root {
+  --font-main: 'iphone', sans-serif;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-bg-light: #f5f5f5;
+  --color-blue: rgb(0, 151, 238);
+  --color-blue-border: rgb(0, 204, 255);
+  --gap-small: 15px;
+  --nav-height: 50px;
+}
+
+/* -------------------------------------------
+   2. BASE SETUP
+------------------------------------------- */
+@font-face {
+  font-family: 'iphone';
+  src: url('./sf-pro-display_regular.woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------
+   3. NAVIGATION COMPONENT
+------------------------------------------- */
+.nav {
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.nav__link {
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* -------------------------------------------
+   4. HERO COMPONENT (Large Sections)
+------------------------------------------- */
+.hero {
+  width: 100%;
+  background-color: var(--color-bg-light);
+  text-align: center;
+  padding: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero__title {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.hero__subtitle {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+/* Modifier classes for Hero backgrounds */
+.hero--fitness {
+  height: 70vh;
+  background-image: url('https://www.apple.com/v/home/ck/images/heroes/apple-fitness-plus-ny/hero_apple_fitness_plus_ny_enhanced__f51a4zjcir6u_small_2x.jpg');
+  background-size: contain;
+}
+
+.hero--watch {
+  height: 70vh;
+  background-image: url('https://www.apple.com/v/home/ck/images/heroes/apple-watch-ny/hero_apple_watch_ny__c8f1tzaoa72a_largetall_2x.jpg');
+  background-size: cover;
+}
+
+.hero--iphone {
+  height: 70vh;
+  background-image: url('https://www.apple.com/v/home/ck/images/heroes/iphone-family/hero_iphone_family__fuz5j2v5xx6y_mediumtall.jpg');
+  background-size: contain;
+  background-position: top;
+}
+
+/* -------------------------------------------
+   5. BUTTON COMPONENT
+------------------------------------------- */
+.cta-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+}
+
+.btn--secondary {
+  border: 1px solid var(--color-blue-border);
+  color: var(--color-blue);
+}
+
+.btn:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* -------------------------------------------
+   6. GRID & CARD COMPONENT
+------------------------------------------- */
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 600px;
+  gap: var(--gap-small);
+  padding: 0 var(--gap-small);
+}
+
+.card {
+  background-color: var(--color-bg-light);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card__content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__title { font-size: 40px; font-weight: 500; }
+.card__title--white { color: var(--color-white); }
+
+.card__subtitle { margin-top: 10px; font-size: 20px; font-weight: 200; }
+.card__subtitle--white { color: var(--color-white); }
+
+.card__logo { height: 40px; }
+
+/* Card Modifiers */
+.card--airpods { background-image: url('https://www.apple.com/v/home/ck/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_medium_2x.jpg'); background-size: contain; }
+.card--ipad-air { background-image: url('https://www.apple.com/v/home/ck/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_medium_2x.jpg'); background-size: cover; }
+.card--macbook { background-color: var(--color-black); background-image: url('https://www.apple.com/v/home/ck/images/promos/macbook-pro-m5/promo_macbook_pro_m5__gnwzdhijhm6a_medium_2x.jpg'); background-size: contain; }
+.card--ipad { background-image: url('https://www.apple.com/v/home/ck/images/promos/ipad/promo_ipad__fioegapg12qi_medium_2x.jpg'); background-size: contain; }
+.card--tradein { background-image: url('https://www.apple.com/v/home/ck/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_medium_2x.jpg'); background-size: cover; }
+.card--card { background-image: url('https://www.apple.com/v/home/ck/images/promos/apple-card/promo_apple_card__5cm7draujpey_medium_2x.jpg'); background-size: 70%; }
+
+/* -------------------------------------------
+   7. UTILITIES
+------------------------------------------- */
+.spacer {
+  height: var(--gap-small);
+  background-color: var(--color-white);
+}
