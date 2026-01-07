@@ -2,8 +2,8 @@ import React from 'react'
 
 const Stats = () => {
   return (
-    <div>
-      <div>
+    <div className='stats'>
+      <div >
         <h2>+200</h2>
         <p>Projects Completed</p>
       </div>

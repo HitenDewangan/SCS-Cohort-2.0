@@ -1,10 +1,20 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: quicksand;
+  src: url(./assets/Questrial-Regular.ttf);
+}
+
+@font-face {
+  font-family: dglight;
+  src: url(./assets/DarkerGrotesque-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'quicksand', 'Times New Roman', Times, serif;
 }
 html, body {
   width: 100%;
@@ -40,30 +50,96 @@ html, body {
   gap: 30px;
 }
 
-.nav-cta{
-  
-}
 
 .nav-cta .cta-icon {
   font-size: 25px;
 }
 
+
+
 .hero-section {
-  position: absolute;
-  width: 100%;
-  min-height: 100vh; /* make room for hero content */
-  overflow: hidden;
-  background-color: rgb(76, 160, 160);
+  position: relative;
+ 
 }
 
 .hero-image {
-  width: 100%;
-  height: auto;
+  width: 60%;
+  height: 90vh;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ 
+  transform: translate(65%, -5%); 
   filter: grayscale(100%);
-  background-position: top
+ 
+  object-fit: cover;
+  
 }
 
+.hero-text {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+.hero-text .hero-title {
+  font-family: dglight;
+  font-size: 400px;
+  font-weight: lighter;
+  line-height: 1;
+  color: #000000;
+}
+.hero-text .hero-subtitle {
+  font-size: 20px;
+  font-weight: lighter;
+  line-height: 0;
+  color: #2c2c2c;
+}
+
+.stats {
+  width: 400px;
+
+  position: absolute;
+  top: 20%;
+  left: 11%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats h2 {
+  font-size: 50px;
+  color: #000000;
+}
+
+.stats p {
+  font-size: 20px;
+  font-weight:500;
+  color: #505050;
+  margin-top: -10px;
+  margin-left: 30px;
+}
+
+
+.side-text {
+  position: absolute;
+  left: 52px;              
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 14px;
+  color: #777;
+}
+
+.side-text p {
+  writing-mode: vertical-rl;  
+  transform: rotate(180deg);  
+}
+
+.side-text .line {
+  width: 1px;
+  height: 60vh;
+  background: #bbb;
+}
