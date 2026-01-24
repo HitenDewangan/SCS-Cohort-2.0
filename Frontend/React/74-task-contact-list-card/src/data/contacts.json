@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Alice Johnson",
+        "mobile": "+919734567890",
+        "email": "alice@me.com",
+        "address": "Stanford University, CA, USA"
+    },
+    {
+        "id": 2,
+        "name": "Bob Smith",
+        "mobile": "+917987654321",
+        "email": "bob@me.com",
+        "address": "MIT Campus, MA, USA"
+    }
+]
