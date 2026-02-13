@@ -7,7 +7,7 @@ app.use(express.json());
 
 // A simple data "database"
 let tasks = [
-    { id: 1, title: "Learn REST APIs" },
+    { id: 1, title: "Learn REST APIss" },
     { id: 2, title: "Deploy my first server" }
 ];
 
