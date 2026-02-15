@@ -59,7 +59,8 @@ app.patch('/api/tasks/:id', (req, res) => {
         // This keeps existing fields, updates matching ones, and adds new ones.
         tasks[taskIndex] = { ...tasks[taskIndex], ...req.body };
 
-        res.json(tasks[taskIndex]);
+        // res.json(tasks[taskIndex]);
+        res.status(200).json({ message: 'Task updated successfully', task: tasks[taskIndex] });
     } else {
         res.status(404).json({ message: 'Task not found' });
     }
