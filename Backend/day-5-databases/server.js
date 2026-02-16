@@ -6,15 +6,14 @@
 const dns = require('dns');
 dns.setServers(['8.8.8.8', '1.1.1.1']);
 
+require('dotenv').config();
+
 const app = require("./src/app")
 const mongoose = require("mongoose")
 
-// mongodb+srv://HIDED:<db_password>@cluster0.ngyyinm.mongodb.net/?appName=Cluster0
-// mongodb+srv://HIDED:db%40123@cluster0.ngyyinm.mongodb.net/
-
 async function connectToDatabase() {
     // Connect to MongoDB
-    mongoose.connect('mongodb+srv://HIDED:db%40123@cluster0.ngyyinm.mongodb.net/firstdb')
+    mongoose.connect(process.env.mongodb_uri)
         .then(() => {
             console.log('Ho gya connect');
         })
