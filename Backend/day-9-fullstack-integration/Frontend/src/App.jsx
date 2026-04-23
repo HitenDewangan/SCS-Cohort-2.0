@@ -56,7 +56,7 @@ function App() {
 
 
   function postNote(note) {
-    axios.post("http://localhost:3000/api/notes", note)
+    axios.post("https://scs-cohort-2-0.onrender.com/api/notes", note)
       .then((res) => {
         console.log(res.data);
         fetchNotes();   // fetch the updated notes list after creating a new note
@@ -68,7 +68,7 @@ function App() {
 
   // ============= delete a note by id ==============
   function deleteNote(id) {
-    axios.delete(`http://localhost:3000/api/notes/${id}`)
+    axios.delete(`https://scs-cohort-2-0.onrender.com/api/notes/${id}`)
       .then((res) => {
         console.log(res.data);
         fetchNotes();   // fetch the updated notes list after deleting a note
@@ -89,7 +89,7 @@ function App() {
   // 2. Handle the actual PATCH request
   function handleUpdate(e) {
     e.preventDefault();
-    axios.patch(`http://localhost:3000/api/notes/${editNoteData.id}`, {
+    axios.patch(`https://scs-cohort-2-0.onrender.com/api/notes/${editNoteData.id}`, {
       title: editNoteData.title,
       description: editNoteData.description
     })
