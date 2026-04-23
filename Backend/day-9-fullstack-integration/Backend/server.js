@@ -11,7 +11,10 @@ const { connectToDatabase } = require("./src/config/database")
 
 const app = require("./src/app")
 
-app.listen(3000, async () => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, async () => {
   console.log("Server is running on your house bitch")
+  console.log(`server is running on port: ${PORT}`)
   await connectToDatabase();
 })
