@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 function App() {
   const [notes, setnotes] = useState([
     {
@@ -30,7 +32,7 @@ function App() {
   // ============== fetch notes from backend api and set the notes state ==============
 
   function fetchNotes() {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get(`${API_URL}/api/notes`)
       .then((res) => {
         // console.log(res.data.notes);
         setnotes(res.data.notes);
@@ -56,7 +58,7 @@ function App() {
 
 
   function postNote(note) {
-    axios.post("https://scs-cohort-2-0.onrender.com/api/notes", note)
+    axios.post(`${API_URL}/api/notes`, note)
       .then((res) => {
         console.log(res.data);
         fetchNotes();   // fetch the updated notes list after creating a new note
@@ -68,7 +70,7 @@ function App() {
 
   // ============= delete a note by id ==============
   function deleteNote(id) {
-    axios.delete(`https://scs-cohort-2-0.onrender.com/api/notes/${id}`)
+    axios.delete(`${API_URL}/api/notes/${id}`)
       .then((res) => {
         console.log(res.data);
         fetchNotes();   // fetch the updated notes list after deleting a note
@@ -89,7 +91,7 @@ function App() {
   // 2. Handle the actual PATCH request
   function handleUpdate(e) {
     e.preventDefault();
-    axios.patch(`https://scs-cohort-2-0.onrender.com/api/notes/${editNoteData.id}`, {
+    axios.patch(`${API_URL}/api/notes/${editNoteData.id}`, {
       title: editNoteData.title,
       description: editNoteData.description
     })
@@ -99,7 +101,6 @@ function App() {
     })
     .catch((err) => console.log(err));
   }
-
 
   return (
     <div className="app-container">
